@@ -139,6 +139,14 @@
         "name": "Player5.png",
         "smoothed": false,
         "userAdded": false
+      },
+      {
+        "file": "Gun1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Gun1.png",
+        "smoothed": false,
+        "userAdded": false
       }
     ]
   },
@@ -207,6 +215,22 @@
           "x": 399,
           "y": 214,
           "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Gun",
+          "persistentUuid": "1de46ed7-41fe-443d-bfd6-21dc476f34b2",
+          "width": 0,
+          "x": 418,
+          "y": 220,
+          "zOrder": 3,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -311,14 +335,20 @@
                     {
                       "hasCustomCollisionMask": true,
                       "image": "Player1.png",
-                      "points": [],
+                      "points": [
+                        {
+                          "name": "Gun",
+                          "x": 12,
+                          "y": 18.5
+                        }
+                      ],
                       "originPoint": {
                         "name": "origine",
                         "x": 0,
-                        "y": 0
+                        "y": 0.5
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
                         "x": 0,
                         "y": 0
@@ -347,14 +377,20 @@
                     {
                       "hasCustomCollisionMask": true,
                       "image": "Player2.png",
-                      "points": [],
+                      "points": [
+                        {
+                          "name": "Gun",
+                          "x": 12,
+                          "y": 18.5
+                        }
+                      ],
                       "originPoint": {
                         "name": "origine",
                         "x": 0,
-                        "y": 0
+                        "y": 0.5
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
                         "x": 0,
                         "y": 0
@@ -383,14 +419,20 @@
                     {
                       "hasCustomCollisionMask": true,
                       "image": "Player3.png",
-                      "points": [],
+                      "points": [
+                        {
+                          "name": "Gun",
+                          "x": 12,
+                          "y": 18.5
+                        }
+                      ],
                       "originPoint": {
                         "name": "origine",
                         "x": 0,
-                        "y": 0
+                        "y": 0.5
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
                         "x": 0,
                         "y": 0
@@ -419,14 +461,20 @@
                     {
                       "hasCustomCollisionMask": true,
                       "image": "Player4.png",
-                      "points": [],
+                      "points": [
+                        {
+                          "name": "Gun",
+                          "x": 12,
+                          "y": 18.5
+                        }
+                      ],
                       "originPoint": {
                         "name": "origine",
                         "x": 0,
-                        "y": 0
+                        "y": 0.5
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
                         "x": 0,
                         "y": 0
@@ -467,14 +515,20 @@
                     {
                       "hasCustomCollisionMask": true,
                       "image": "Player5.png",
-                      "points": [],
+                      "points": [
+                        {
+                          "name": "Gun",
+                          "x": 12,
+                          "y": 18.5
+                        }
+                      ],
                       "originPoint": {
                         "name": "origine",
                         "x": 0,
-                        "y": 0
+                        "y": 0.5
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
                         "x": 0,
                         "y": 0
@@ -505,6 +559,66 @@
               ]
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Gun",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Gun1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 14,
+                        "y": 8
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 7,
+                            "y": 5
+                          },
+                          {
+                            "x": 26,
+                            "y": 5
+                          },
+                          {
+                            "x": 26,
+                            "y": 13
+                          },
+                          {
+                            "x": 7,
+                            "y": 13
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -515,6 +629,9 @@
           },
           {
             "objectName": "Player"
+          },
+          {
+            "objectName": "Gun"
           }
         ]
       },
@@ -552,6 +669,91 @@
                 "floor",
                 "",
                 "",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "TopDownMovementBehavior::IsMoving"
+              },
+              "parameters": [
+                "Player",
+                "TopDownMovement"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "Player",
+                "Animation",
+                "=",
+                "\"Run\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "TopDownMovementBehavior::IsMoving"
+              },
+              "parameters": [
+                "Player",
+                "TopDownMovement"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "Player",
+                "Animation",
+                "=",
+                "\"Idle\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetXY"
+              },
+              "parameters": [
+                "Gun",
+                "=",
+                "Player.PointX(\"Gun\")",
+                "=",
+                "Player.PointY(\"Gun\")"
+              ]
+            },
+            {
+              "type": {
+                "value": "RotateTowardPosition"
+              },
+              "parameters": [
+                "Gun",
+                "CursorX()",
+                "CursorY()",
+                "0",
                 ""
               ]
             }
