@@ -1,7 +1,7 @@
 {
   "firstLayout": "",
   "gdVersion": {
-    "build": 277,
+    "build": 279,
     "major": 5,
     "minor": 6,
     "revision": 0
@@ -17,7 +17,7 @@
     "pixelsRounding": true,
     "projectUuid": "812cab35-d6ca-40e6-8cc2-19fe83187b81",
     "scaleMode": "nearest",
-    "sizeOnStartupMode": "adaptWidth",
+    "sizeOnStartupMode": "",
     "templateSlug": "",
     "version": "1.0.0",
     "name": "Wave defence",
@@ -195,6 +195,14 @@
         "name": "Collision Masks.png",
         "smoothed": false,
         "userAdded": false
+      },
+      {
+        "file": "Enemy_Spawn_Location.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Enemy_Spawn_Location.png",
+        "smoothed": false,
+        "userAdded": false
       }
     ]
   },
@@ -227,7 +235,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 2.259253576955563,
+        "zoomFactor": 1.8515977016557068,
         "windowMask": false,
         "selectedLayer": "",
         "gameEditorMode": "instances-editor"
@@ -295,12 +303,140 @@
           "height": 0,
           "keepRatio": true,
           "layer": "",
-          "name": "Enemy",
-          "persistentUuid": "c5b561eb-4c65-4d0b-a7f4-644e95bb2a5e",
+          "name": "Centre",
+          "persistentUuid": "22704284-4c27-4381-a877-9c29f84de63f",
           "width": 0,
-          "x": 299,
-          "y": 197,
-          "zOrder": 4,
+          "x": 396,
+          "y": 204,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "SpawnPoints",
+          "persistentUuid": "b6d8d63f-478e-4b3f-ba75-b7b5b4cd5128",
+          "width": 0,
+          "x": 621,
+          "y": 58,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "SpawnPoints",
+          "persistentUuid": "081ca04c-e79b-4a2f-8db2-34498a41b2e0",
+          "width": 0,
+          "x": 157,
+          "y": 56,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "SpawnPoints",
+          "persistentUuid": "8238542d-e396-47bd-95fa-f5e975ccb270",
+          "width": 0,
+          "x": 625,
+          "y": 319,
+          "zOrder": 8,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "SpawnPoints",
+          "persistentUuid": "4f6d2722-28fc-4a2f-b764-0313bab5f52e",
+          "width": 0,
+          "x": 153,
+          "y": 322,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "SpawnPoints",
+          "persistentUuid": "d32acf51-3cb3-49d3-bf8f-1b55a159bf0b",
+          "width": 0,
+          "x": 623,
+          "y": 190,
+          "zOrder": 10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "SpawnPoints",
+          "persistentUuid": "01b384f7-c8b9-4bf0-ba64-ef5d5c4373da",
+          "width": 0,
+          "x": 148,
+          "y": 203,
+          "zOrder": 11,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "SpawnPoints",
+          "persistentUuid": "ff7a880a-ceb8-45c6-968d-374dbbfb86b3",
+          "width": 0,
+          "x": 396,
+          "y": 43,
+          "zOrder": 12,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "SpawnPoints",
+          "persistentUuid": "79f70c1b-5c94-43c8-b7ff-cdde85526f03",
+          "width": 0,
+          "x": 393,
+          "y": 354,
+          "zOrder": 13,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1043,6 +1179,66 @@
               ]
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "SpawnPoints",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Enemy_Spawn_Location.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 16,
+                            "y": 0
+                          },
+                          {
+                            "x": 16,
+                            "y": 16
+                          },
+                          {
+                            "x": 0,
+                            "y": 16
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -1050,6 +1246,9 @@
         "children": [
           {
             "objectName": "floor"
+          },
+          {
+            "objectName": "SpawnPoints"
           },
           {
             "objectName": "Player"
@@ -1103,6 +1302,89 @@
                 "",
                 "",
                 ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneJustBegins"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Enemy Spawn\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"Enemy Spawn\"",
+                ">",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "PickRandomInstance"
+              },
+              "parameters": [
+                "",
+                "SpawnPoints"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Enemy",
+                "SpawnPoints.X()",
+                "SpawnPoints.Y()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Enemy Spawn\""
+              ]
+            },
+            {
+              "type": {
+                "value": "AddForceTowardObject"
+              },
+              "parameters": [
+                "Enemy",
+                "Centre",
+                "10",
+                "1"
               ]
             }
           ]
@@ -1297,6 +1579,7 @@
           ]
         },
         {
+          "aiGeneratedEventId": "01M03YNHNDTV21P4CKGV90E0G1",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
           "actions": [
@@ -1322,6 +1605,51 @@
                 "CursorY()",
                 "0",
                 ""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PosX"
+                  },
+                  "parameters": [
+                    "Gun",
+                    "<",
+                    "CursorX()"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FlippableCapability::FlippableBehavior::FlipY"
+                  },
+                  "parameters": [
+                    "Gun",
+                    "Flippable",
+                    "no"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FlippableCapability::FlippableBehavior::FlipY"
+                  },
+                  "parameters": [
+                    "Gun",
+                    "Flippable",
+                    "yes"
+                  ]
+                }
               ]
             }
           ]
@@ -1447,6 +1775,35 @@
               },
               "parameters": [
                 "Enemy",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Enemy",
+                "Centre",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"Untitled scene\"",
                 ""
               ]
             }
