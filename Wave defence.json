@@ -240,7 +240,22 @@
         "selectedLayer": "",
         "gameEditorMode": "instances-editor"
       },
-      "objectsGroups": [],
+      "objectsGroups": [
+        {
+          "name": "Entities",
+          "objects": [
+            {
+              "name": "Player"
+            },
+            {
+              "name": "Bullet"
+            },
+            {
+              "name": "Enemy"
+            }
+          ]
+        }
+      ],
       "variables": [
         {
           "name": "FacingOffset",
@@ -274,8 +289,8 @@
           "name": "Player",
           "persistentUuid": "1f7efc75-b0c4-4c65-850d-af2000dc69ee",
           "width": 0,
-          "x": 399,
-          "y": 214,
+          "x": 404,
+          "y": 241,
           "zOrder": 2,
           "numberProperties": [],
           "stringProperties": [],
@@ -418,8 +433,8 @@
           "name": "SpawnPoints",
           "persistentUuid": "ff7a880a-ceb8-45c6-968d-374dbbfb86b3",
           "width": 0,
-          "x": 396,
-          "y": 43,
+          "x": 362,
+          "y": 67,
           "zOrder": 12,
           "numberProperties": [],
           "stringProperties": [],
@@ -434,8 +449,8 @@
           "name": "SpawnPoints",
           "persistentUuid": "79f70c1b-5c94-43c8-b7ff-cdde85526f03",
           "width": 0,
-          "x": 393,
-          "y": 354,
+          "x": 431,
+          "y": 325,
           "zOrder": 13,
           "numberProperties": [],
           "stringProperties": [],
@@ -550,8 +565,8 @@
                       ],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0.5
+                        "x": 12,
+                        "y": 24.5
                       },
                       "centerPoint": {
                         "automatic": false,
@@ -592,8 +607,8 @@
                       ],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0.5
+                        "x": 12,
+                        "y": 24.5
                       },
                       "centerPoint": {
                         "automatic": false,
@@ -634,8 +649,8 @@
                       ],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0.5
+                        "x": 12,
+                        "y": 24.5
                       },
                       "centerPoint": {
                         "automatic": false,
@@ -676,8 +691,8 @@
                       ],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0.5
+                        "x": 12,
+                        "y": 24.5
                       },
                       "centerPoint": {
                         "automatic": false,
@@ -730,8 +745,8 @@
                       ],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0.5
+                        "x": 12,
+                        "y": 24.5
                       },
                       "centerPoint": {
                         "automatic": false,
@@ -976,8 +991,8 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 12,
+                        "y": 26
                       },
                       "centerPoint": {
                         "automatic": true,
@@ -1012,8 +1027,8 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 12,
+                        "y": 26
                       },
                       "centerPoint": {
                         "automatic": true,
@@ -1048,8 +1063,8 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 12,
+                        "y": 26
                       },
                       "centerPoint": {
                         "automatic": true,
@@ -1084,8 +1099,8 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 12,
+                        "y": 26
                       },
                       "centerPoint": {
                         "automatic": true,
@@ -1269,346 +1284,560 @@
       },
       "events": [
         {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "SceneJustBegins"
-              },
-              "parameters": [
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "ZoomCamera"
-              },
-              "parameters": [
-                "",
-                "2",
-                "",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "CenterCameraOnObject"
-              },
-              "parameters": [
-                "",
-                "floor",
-                "",
-                "",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "SceneJustBegins"
-              },
-              "parameters": [
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "ResetTimer"
-              },
-              "parameters": [
-                "",
-                "\"Enemy Spawn\""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "CompareTimer"
-              },
-              "parameters": [
-                "",
-                "\"Enemy Spawn\"",
-                ">",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "PickRandomInstance"
-              },
-              "parameters": [
-                "",
-                "SpawnPoints"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "Create"
-              },
-              "parameters": [
-                "",
-                "Enemy",
-                "SpawnPoints.X()",
-                "SpawnPoints.Y()",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "ResetTimer"
-              },
-              "parameters": [
-                "",
-                "\"Enemy Spawn\""
-              ]
-            },
-            {
-              "type": {
-                "value": "AddForceTowardObject"
-              },
-              "parameters": [
-                "Enemy",
-                "Centre",
-                "10",
-                "1"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "TopDownMovementBehavior::IsMoving"
-              },
-              "parameters": [
-                "Player",
-                "TopDownMovement"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "AnimatableCapability::AnimatableBehavior::SetName"
-              },
-              "parameters": [
-                "Player",
-                "Animation",
-                "=",
-                "\"Run\""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": true,
-                "value": "TopDownMovementBehavior::IsMoving"
-              },
-              "parameters": [
-                "Player",
-                "TopDownMovement"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "AnimatableCapability::AnimatableBehavior::SetName"
-              },
-              "parameters": [
-                "Player",
-                "Animation",
-                "=",
-                "\"Idle\""
-              ]
-            }
-          ]
-        },
-        {
-          "aiGeneratedEventId": "01KZW27JN5QZHC713XW7E9BZAH",
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "PosX"
-              },
-              "parameters": [
-                "Player",
-                "<",
-                "CursorX()"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "FlippableCapability::FlippableBehavior::FlipX"
-              },
-              "parameters": [
-                "Player",
-                "Flippable",
-                ""
-              ]
-            }
-          ],
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "folded": true,
+          "name": "beginning of the scene ",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
           "events": [
             {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
                   "type": {
-                    "value": "NumberVariable"
+                    "value": "SceneJustBegins"
                   },
                   "parameters": [
-                    "FacingOffset",
-                    "!=",
-                    "0"
+                    ""
                   ]
                 }
               ],
               "actions": [
                 {
                   "type": {
-                    "value": "SetX"
+                    "value": "ZoomCamera"
                   },
                   "parameters": [
-                    "Player",
-                    "-",
-                    "Player.Width()"
+                    "",
+                    "2",
+                    "",
+                    ""
                   ]
                 },
                 {
                   "type": {
-                    "value": "SetNumberVariable"
+                    "value": "CenterCameraOnObject"
                   },
                   "parameters": [
-                    "FacingOffset",
-                    "=",
-                    "0"
+                    "",
+                    "floor",
+                    "",
+                    "",
+                    ""
                   ]
                 }
               ]
             }
-          ]
+          ],
+          "parameters": []
         },
         {
-          "aiGeneratedEventId": "01KZW27JN5QZHC713XW7E9BZAH",
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "folded": true,
+          "name": "Z-ordering/divoders",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
             {
-              "type": {
-                "value": "PosX"
-              },
-              "parameters": [
-                "Player",
-                ">",
-                "CursorX()"
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetZOrder"
+                  },
+                  "parameters": [
+                    "Entities",
+                    "=",
+                    "Entities.Y()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetZOrder"
+                  },
+                  "parameters": [
+                    "Gun",
+                    "=",
+                    "Player.ZOrder()+1"
+                  ]
+                }
               ]
             }
           ],
-          "actions": [
-            {
-              "type": {
-                "value": "FlippableCapability::FlippableBehavior::FlipX"
-              },
-              "parameters": [
-                "Player",
-                "Flippable",
-                "yes"
-              ]
-            }
-          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Enemies",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
           "events": [
             {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
                   "type": {
-                    "value": "NumberVariable"
+                    "value": "SceneJustBegins"
                   },
                   "parameters": [
-                    "FacingOffset",
-                    "=",
-                    "0"
+                    ""
                   ]
                 }
               ],
               "actions": [
                 {
                   "type": {
-                    "value": "SetX"
+                    "value": "ResetTimer"
                   },
                   "parameters": [
-                    "Player",
-                    "+",
-                    "Player.Width()"
+                    "",
+                    "\"Enemy Spawn\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CompareTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Enemy Spawn\"",
+                    ">",
+                    "1"
                   ]
                 },
                 {
                   "type": {
-                    "value": "SetNumberVariable"
+                    "value": "PickRandomInstance"
                   },
                   "parameters": [
-                    "FacingOffset",
-                    "=",
+                    "",
+                    "SpawnPoints"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Enemy",
+                    "SpawnPoints.X()",
+                    "SpawnPoints.Y()",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Enemy Spawn\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "AddForceTowardObject"
+                  },
+                  "parameters": [
+                    "Enemy",
+                    "Centre",
+                    "10",
                     "1"
                   ]
                 }
-              ]
-            }
-          ]
-        },
-        {
-          "aiGeneratedEventId": "01M03YNHNDTV21P4CKGV90E0G1",
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": [
-            {
-              "type": {
-                "value": "SetXY"
-              },
-              "parameters": [
-                "Gun",
-                "=",
-                "Player.PointX(\"Gun\")",
-                "=",
-                "Player.PointY(\"Gun\")"
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "PosX"
+                      },
+                      "parameters": [
+                        "Enemy",
+                        ">=",
+                        "Centre.X()"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "FlippableCapability::FlippableBehavior::FlipX"
+                      },
+                      "parameters": [
+                        "Enemy",
+                        "Flippable",
+                        "yes"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "PosX"
+                      },
+                      "parameters": [
+                        "Enemy",
+                        "<",
+                        "Centre.X()"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "FlippableCapability::FlippableBehavior::FlipX"
+                      },
+                      "parameters": [
+                        "Enemy",
+                        "Flippable",
+                        "no"
+                      ]
+                    }
+                  ]
+                }
               ]
             },
             {
-              "type": {
-                "value": "RotateTowardPosition"
-              },
-              "parameters": [
-                "Gun",
-                "CursorX()",
-                "CursorY()",
-                "0",
-                ""
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CollisionNP"
+                  },
+                  "parameters": [
+                    "Bullet",
+                    "Enemy",
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Bullet",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Health::Health::Hit"
+                  },
+                  "parameters": [
+                    "Enemy",
+                    "Health",
+                    "1",
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Health::Health::IsDead"
+                  },
+                  "parameters": [
+                    "Enemy",
+                    "Health",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Enemy",
+                    ""
+                  ]
+                }
               ]
             }
           ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "folded": true,
+          "name": "Player",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
           "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "MouseButtonFromTextReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Left\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::Fire"
+                  },
+                  "parameters": [
+                    "Gun",
+                    "FireBullet",
+                    "Gun.PointX(\"BulletPoint\")",
+                    "Gun.PointY(\"BulletPoint\")",
+                    "Bullet",
+                    "Gun.Angle()",
+                    "100",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "folded": true,
+          "name": "Gun",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "aiGeneratedEventId": "01M03YNHNDTV21P4CKGV90E0G1",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetXY"
+                  },
+                  "parameters": [
+                    "Gun",
+                    "=",
+                    "Player.PointX(\"Gun\")",
+                    "=",
+                    "Player.PointY(\"Gun\")"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "RotateTowardPosition"
+                  },
+                  "parameters": [
+                    "Gun",
+                    "CursorX()",
+                    "CursorY()",
+                    "0",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "Distance"
+                  },
+                  "parameters": [
+                    "Bullet",
+                    "Player",
+                    "400",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Bullet",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "aiGeneratedEventId": "01KZW27JN5QZHC713XW7E9BZAH",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PosX"
+                  },
+                  "parameters": [
+                    "Player",
+                    "<",
+                    "CursorX()"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Flippable",
+                    ""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "FacingOffset",
+                        "!=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetX"
+                      },
+                      "parameters": [
+                        "Player",
+                        "-",
+                        "Player.Width()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "FacingOffset",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "aiGeneratedEventId": "01KZW27JN5QZHC713XW7E9BZAH",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PosX"
+                  },
+                  "parameters": [
+                    "Player",
+                    ">",
+                    "CursorX()"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Flippable",
+                    "yes"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "FacingOffset",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetX"
+                      },
+                      "parameters": [
+                        "Player",
+                        "+",
+                        "Player.Width()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "FacingOffset",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
             {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
@@ -1652,162 +1881,118 @@
                 }
               ]
             }
-          ]
+          ],
+          "parameters": []
         },
         {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "folded": true,
+          "name": "Movement",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
             {
-              "type": {
-                "value": "MouseButtonFromTextReleased"
-              },
-              "parameters": [
-                "",
-                "\"Left\""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::Fire"
-              },
-              "parameters": [
-                "Gun",
-                "FireBullet",
-                "Gun.PointX(\"BulletPoint\")",
-                "Gun.PointY(\"BulletPoint\")",
-                "Bullet",
-                "Gun.Angle()",
-                "100",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": true,
-                "value": "Distance"
-              },
-              "parameters": [
-                "Bullet",
-                "Player",
-                "400",
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "Delete"
-              },
-              "parameters": [
-                "Bullet",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "CollisionNP"
-              },
-              "parameters": [
-                "Bullet",
-                "Enemy",
-                "",
-                "",
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "Delete"
-              },
-              "parameters": [
-                "Bullet",
-                ""
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "TopDownMovementBehavior::IsMoving"
+                  },
+                  "parameters": [
+                    "Player",
+                    "TopDownMovement"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Animation",
+                    "=",
+                    "\"Idle\""
+                  ]
+                }
               ]
             },
             {
-              "type": {
-                "value": "Health::Health::Hit"
-              },
-              "parameters": [
-                "Enemy",
-                "Health",
-                "1",
-                "",
-                "",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "Health::Health::IsDead"
-              },
-              "parameters": [
-                "Enemy",
-                "Health",
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "Delete"
-              },
-              "parameters": [
-                "Enemy",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "CollisionNP"
-              },
-              "parameters": [
-                "Enemy",
-                "Centre",
-                "",
-                "",
-                ""
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "TopDownMovementBehavior::IsMoving"
+                  },
+                  "parameters": [
+                    "Player",
+                    "TopDownMovement"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Animation",
+                    "=",
+                    "\"Run\""
+                  ]
+                }
               ]
             }
           ],
-          "actions": [
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "folded": true,
+          "name": "Game over",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
             {
-              "type": {
-                "value": "Scene"
-              },
-              "parameters": [
-                "",
-                "\"Untitled scene\"",
-                ""
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CollisionNP"
+                  },
+                  "parameters": [
+                    "Enemy",
+                    "Centre",
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Scene"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Untitled scene\"",
+                    ""
+                  ]
+                }
               ]
             }
-          ]
+          ],
+          "parameters": []
         }
       ],
       "layers": [
