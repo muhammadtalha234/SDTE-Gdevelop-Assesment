@@ -409,7 +409,27 @@
     "folderName": "__ROOT"
   },
   "objectsGroups": [],
-  "variables": [],
+  "variables": [
+    {
+      "name": "Settingss",
+      "persistentUuid": "1bb616c7-3069-4a21-891b-3520e36e2840",
+      "type": "structure",
+      "children": [
+        {
+          "name": "Music",
+          "persistentUuid": "f79b0366-6e1c-4e95-9668-52340e78111a",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "Sound",
+          "persistentUuid": "403c0c41-480e-49ec-b169-f1d610b59258",
+          "type": "number",
+          "value": 0
+        }
+      ]
+    }
+  ],
   "layouts": [
     {
       "b": 27,
@@ -2582,7 +2602,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Player",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -2628,6 +2647,7 @@
                   ]
                 },
                 {
+                  "aiGeneratedEventId": "01M1MPDGN8P3136QYSGMMMJGV0",
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -2648,8 +2668,8 @@
                       "parameters": [
                         "Gun",
                         "FireBullet",
-                        "Gun.PointX(\"BulletPoint\")",
-                        "Gun.PointY(\"BulletPoint\")",
+                        "Gun.CenterX() + cos(ToRad(Gun.Angle())) * 14",
+                        "Gun.CenterY() + sin(ToRad(Gun.Angle())) * 14",
                         "Bullet",
                         "Gun.Angle()",
                         "150",
@@ -2659,6 +2679,7 @@
                   ]
                 },
                 {
+                  "aiGeneratedEventId": "01M1MP7QNGGT7A9SXZKD4TE9J6",
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -2681,8 +2702,8 @@
                         "",
                         "audiomass-output.mp3",
                         "",
-                        "50",
-                        "RandomFloatInRange(0.8,1)"
+                        "Settingss.Sound",
+                        "RandomFloatInRange(0.8, 1)"
                       ]
                     },
                     {
@@ -2933,6 +2954,7 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
+              "folded": true,
               "name": "Movement",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -3871,6 +3893,60 @@
               },
               "parameters": [
                 "SettingsMarker"
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M1MMB1M4DAXNGJTAPP7J91H8",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PanelSpriteSlider::PanelSpriteSlider::IsBeingDragged"
+              },
+              "parameters": [
+                "SoundSlider",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Settingss.Sound",
+                "=",
+                "SoundSlider.Value()"
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M1MMB1M4DAXNGJTAPP7J91H8",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PanelSpriteSlider::PanelSpriteSlider::IsBeingDragged"
+              },
+              "parameters": [
+                "SoundSlider",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Settingss.Music",
+                "=",
+                "Music_Slider.Value()"
               ]
             }
           ]
